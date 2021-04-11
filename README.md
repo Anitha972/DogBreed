@@ -1,4 +1,4 @@
-# Dog Breed application by Vue JS
+## Dog Breed application by Vue JS
 Dog Breed application shows various kind of random dog breed images on dashboard. If we click on particular dog breed, it will show the various images of that breed. It is also having search option where we can get sub breeds of particular breed. For the invalid search, it will redirect to error page. It is using open source api: https://dog.ceo/dog-api/.
 
 
@@ -21,6 +21,7 @@ Dog Breed application shows various kind of random dog breed images on dashboard
 * Bootstrap:  With BootstrapVue we can build responsive projects on the web using Vue.js. Please refer url for more details:https://bootstrap-vue.org/
 * jw-pagination: With this api we can insert pagination to the data to avoid endless scrolling. Please refer the below url for more details: https://jasonwatmore.com/post/2019/08/21/vue-js-simple-pagination-example
 * Router: This router we use it for navigation purpose.
+* vuex: vuex is used for state management purpose. Please refer the below url for more details: https://vuex.vuejs.org/.
 
 ## Project setup
 ```

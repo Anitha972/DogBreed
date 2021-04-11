@@ -4,6 +4,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import router from './router'
 import JwPagination from 'jw-vue-pagination';
+import store from './store';
 
 Vue.config.productionTip = false
 Vue.component('jw-pagination',JwPagination)
@@ -16,5 +17,6 @@ Vue.filter('capitalize', function (value) {
 
 new Vue({
   render: h => h(App),
-  router
+  router,
+  store
 }).$mount('#app')

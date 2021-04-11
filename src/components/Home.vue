@@ -30,7 +30,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 
 export default {
   name: 'Home',
@@ -41,7 +40,6 @@ export default {
       pageOfItems: [],
       BreedNameForSearch: '',
       BreedArray: [],
-      check: false,
       ErrorMsg:''
     }
   },
@@ -51,10 +49,6 @@ export default {
           this.pageOfItems = pageOfItems;
       },
       goToSearch() {
-          if(this.BreedNameForSearch=='')
-          {
-            this.check=true;
-          }  
           this.$router.push({
               name: 'SubBreed',
               params: {
@@ -64,22 +58,9 @@ export default {
       }
   },
   mounted() { 
-    axios.get('https://dog.ceo/api/breeds/list/all').then((result)=>{
-        console.log(result);
-        this.breeds = result.data.message;
-         for(const property in this.breeds){
-            var imgUrl;
-            axios.get('https://dog.ceo/api/breed/'+property+'/images/random').then((res)=>{
-              imgUrl = res.data.message;
-              const dogObj = {
-                  name: property,
-                  img: imgUrl
-              }
-
-              this.dogs.push(dogObj)
-            })
-         }
-    })
+    this.$store.dispatch('getAllDogNames');
+    this.breeds = this.$store.state.breeds;
+    this.dogs = this.$store.state.dogs;
   }
 }
 </script>

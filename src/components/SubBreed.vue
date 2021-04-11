@@ -5,6 +5,7 @@
         <thead class="thead-light"> 
             <tr>
               <th class="heading"><h5>SubBreeds of {{BreedNameForSearch|capitalize }}</h5></th>
+              
             </tr>
         </thead>
        <tbody>
@@ -19,7 +20,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 
 export default {
    name: 'SubBreed',
@@ -42,30 +42,16 @@ export default {
             }
         });
      }
-   },
+   }, 
    mounted() {
-       axios.get('https://dog.ceo/api/breed/'+this.BreedNameForSearch+'/list').then((resp) => {
-           console.log(resp);
-           this.subBreeds = resp.data.message;
-           console.log(this.subBreeds.length);
-            if(this.subBreeds.length==0)
-            {
-              this.goToErrorPage();
-            }
-            else
-            {
-              this.checkSubBreeds = true;
-            }
-       }).catch((err) => {
-           console.log(err);
-           this.ErrorMsg = "Breed name "+this.BreedNameForSearch+" not found";
-           this.$router.push({
-              name: 'Error',
-              params: {
-                    ErrorMsg: this.ErrorMsg
-              }
-          });
-       })
+       this.$store.dispatch('getSubBreedList',this.BreedNameForSearch);
+       this.subBreeds = this.$store.state.subBreeds;
+       if(this.subBreeds.length == 0) {
+         this.goToErrorPage();
+       }
+       else {
+         this.checkSubBreeds = true;
+       }
   }
   
 }
