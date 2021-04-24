@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './components/Home'
-import BreedImages from './components/BreedImages'
+import Home from './views/Home'
+import BreedImages from './views/BreedImages'
 import SubBreed from './components/SubBreed'
-import ErrorPage from './components/ErrorPage'
+import ErrorPage from './views/ErrorPage'
 
 Vue.use(Router);
 

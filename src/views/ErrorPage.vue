@@ -1,8 +1,8 @@
 <template>
     <div class="container">
-        <div class="card text-danger  mb-3 error">
+        <div class="card text-danger  mb-3 ErrorPage">
             <div class="card-header">
-                <h2>{{errorName}}</h2>
+                <h2>{{ErrorName}}</h2>
             </div>
             <div class="card-body">
                 <h5 class="card-title">OOPS!</h5>
@@ -15,9 +15,9 @@
 
 <script>
 export default {
-    name: "ErrorPage",
+  name: "ErrorPage",
   props: {
-    errorName:{
+    ErrorName:{
         default:'Error 404'
     },
     ErrorMsg:{
@@ -28,11 +28,8 @@ export default {
 
 </script>
 <style scoped>
-.error {
+.ErrorPage {
     margin-top: 20px;
-    /* 
-      background-color:rgb(241, 180, 161);
-    */
     background-color:rgb(241, 202, 190);
     text-align: left;
 }

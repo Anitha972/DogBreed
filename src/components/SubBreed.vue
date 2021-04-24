@@ -1,21 +1,20 @@
 <template>
   <div class="container">
-     <table v-if="checkSubBreeds" class="table table-bordered borders">
+     <table v-if="checkSubBreeds" class="table table-bordered D_Border">
 
         <thead class="thead-light"> 
             <tr>
               <th class="heading"><h5>SubBreeds of {{BreedNameForSearch|capitalize }}</h5></th>
-              
             </tr>
         </thead>
+
        <tbody>
-            <tr class="data" v-for="(subBreed,index) in subBreeds" :key="index"> 
+            <tr class="SubBreedData" v-for="(subBreed,index) in subBreeds" :key="index"> 
                <td>{{subBreed|capitalize}}</td>
             </tr>
        </tbody>
 
      </table>
-
   </div>    
 </template>
 
@@ -58,13 +57,13 @@ export default {
 </script>
 
 <style>
-.borders {   
+.D_Border {   
     border: black;
     margin-top: 30px;
     text-align: left;
     border-style: double;
 }
-.data {
+.SubBreedData {
     border-style: double;
 } 
 </style>

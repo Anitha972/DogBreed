@@ -1,18 +1,15 @@
 <template>
-  <div id="app">
-    <Header/>
-  </div>
+  <div>
+      <nav class="navbar navbar-expand-sm Header">
+         <router-link :to="{name:'Home'}"  class="navbar-brand" exact>Dog Breed</router-link>  
+      </nav>
+      <router-view />
+  </div>   
 </template>
 
 <script>
-import Header from "./components/Header"
-
-
 export default {
-  name: 'App',
-  components: {
-    Header
-  }
+
 }
 </script>
 
@@ -25,13 +22,13 @@ export default {
   color: #2c3e50;
 }
 
-.SetUp {
-  background-color:cyan;
+.Header {
+  background-color:cyan; 
   padding: 15px !important;  
 }
 
-.SetUp a {
-  color:purple;
+.Header a {
+  color:purple; 
   font-weight: bold;
 }
 </style>

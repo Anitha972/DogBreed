@@ -2,7 +2,7 @@
   <div class="container">
     
      <div class ="row">
-          <div v-for="(img,index) in pageOfItems" :key="index" class="col-md-3 spacing">
+          <div v-for="(img,index) in pageOfItems" :key="index" class="col-md-3 BreedImages">
                 <img :src='img' :alt="img" width="200px" height="180px">
           </div>
       </div>
@@ -41,11 +41,7 @@ export default {
 </script>
 
 <style>
-.spacing {
+.BreedImages {
     margin-top: 20px;
 } 
-.text-design {
-    margin-top: 20px;
-    color: red;
-}
 </style>

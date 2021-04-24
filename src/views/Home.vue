@@ -1,5 +1,5 @@
 <template>
-  <div class="container spacing">   
+  <div class="Home container">   
      
       <div class="row search">
            <div class="col-md-4">            
@@ -7,16 +7,16 @@
             </div>
 
             <div class="col-md-1">
-               <button class="btn btn-primary btnAdjustment" @click="goToSearch">Search</button>
+               <button class="btn btn-primary BtnAdjustment" @click="goToSearch">Search</button>
             </div>
       </div>
 
-      <div class ="row images">
-          <div v-for="(dog,index) in pageOfItems" :key="index" class="col-md-3">
+      <div class ="row Images">
+          <div v-for="(dog,index) in pageOfItems" :key="index" class="col-md-3 DogList">
               <router-link :to="{name:'BreedImages', params:{BreedName: dog.name} }">
                 <img :src='dog.img' :alt="dog.img" class = "dogImage" width="200px" height="180px">
               </router-link>  
-              <p>{{dog.name}}</p>
+              <p>{{dog.name | capitalize}}</p>
           </div>
       </div>
 
@@ -39,7 +39,6 @@ export default {
       dogs:[],
       pageOfItems: [],
       BreedNameForSearch: '',
-      BreedArray: [],
       ErrorMsg:''
     }
   },
@@ -72,12 +71,20 @@ export default {
   padding: 20px;
 }
 
-.spacing {
+.Home {
   margin-left: 40px;
 } 
 
-.images {
+.Images {
   margin-top: 30px;
+}
+
+.DogList {
+  margin-top: 20px;
+  border: 1px solid grey;
+  margin-left: 40px;
+  background-color:  #d3d3d361;
+  text-align: center;
 }
 
 @media only screen and (max-width: 480px) {
@@ -85,8 +92,11 @@ export default {
     width: 300px;
     height: 185px;
   }
-  .btnAdjustment {
+  .BtnAdjustment {
     margin: 10px;
+  }
+  .DogList {
+    margin-right: 30px;
   }  
 }
 
@@ -95,10 +105,10 @@ export default {
     width: 180px;
     height: 185px;
   }
-  .spacing {
+  .Home {
     margin-left: 2px;
   } 
-  .btnAdjustment {
+  .BtnAdjustment {
     margin: 10px;
   } 
 }
