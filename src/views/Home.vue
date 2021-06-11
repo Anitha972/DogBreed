@@ -35,7 +35,6 @@ export default {
   name: 'Home',
   data() {
     return {
-      breeds:[ ],
       dogs:[],
       pageOfItems: [],
       BreedNameForSearch: '',
@@ -58,7 +57,6 @@ export default {
   },
   mounted() { 
     this.$store.dispatch('getAllDogNames');
-    this.breeds = this.$store.state.breeds;
     this.dogs = this.$store.state.dogs;
   }
 }
